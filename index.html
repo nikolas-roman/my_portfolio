@@ -8,24 +8,146 @@
     <title>Nikolas Roman</title>
 </head>
 <body>
-    <header>
-        <nav id="nav-bar">
-            <ul class="nav-links">
-            <li class="nav=item"><a href="#" class="nav-link">About</a></li>
-            <li class="nav=item"><a href="#" class="nav-link">Projects</a></li>
-            <li class="nav=item"><a href="#" class="nav-link">Contact</a></li>
-            </ul>
-            <button class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </nav>
+    <header id="hero">
+
+
+        <h1>Hello, I'm Nick!</h1>
+        <p> I'm a Developer & Customer Service Specialist</p>
+         <span class="scrollDown" label="Scroll Down"><a href="#about">
+            <svg class="arrows">
+                <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                <path class="a3" d="M0 40 L30 72 L60 40"></path>
+            </svg>
+        </a>
+    </span>
+      
+   
+      
+   
+    
     </header>
-    <main>
-        <h1>Hi! I'm Nick!</h1>
-        <h2>I'm in the path to being a web developer</h2>
-    </main>
+        <main id="about">
+            <nav id="nav-bar">
+                <ul class="nav-links">
+                        <li class="nav=item"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav=item"><a href="#projects" class="nav-link">Projects</a></li>
+                        <li class="nav=item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                    <button class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+            </nav>
+            <section id="about">
+                <header>
+                    <h2>About Me</h2>
+                </header>
+            <div class="main-photo">
+                <img src="assets/1553197838352.jpg" alt="Nicolas">
+                
+            </div>
+            <button> My Curriculum </button>
+            </section>
+        </main>
+        
+        <section id="projects">
+            <header>
+                <h2>Projects</h2>
+            </header>
+            <div class="container-projects">
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="assets/2021-05-30.png" alt="Discover_sao_paulo">
+                </div>
+                <div class="project-content">
+                    <div class="project-title">
+                        <h2>Discover São Paulo</h2>
+                    </div>
+                    <div class="project-lang">
+                        <span class="lang">HTML</span>
+                        <span class="lang">CSS</span>
+                        <span class="lang">JavaScript</span>
+                    </div>
+                    <div class="project-description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo a eius alias omnis delectus aspernatur voluptas tenetur illo doloribus sequi, reprehenderit suscipit provident dolorem velit eveniet, ullam rem debitis officiis.
+                    </div>
+                    <div class="project-buttons">
+                        <a href="#"><span class="buttonProject">more info</span></a>
+                        <a href="#"><span class="buttonProject">check code!</span></a>
+                        </div>
+                    
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="assets/2021-05-30.png" alt="Discover_sao_paulo">
+                </div>
+                <div class="project-content">
+                    <div class="project-title">
+                        <h2>Discover São Paulo</h2>
+                    </div>
+                    <div class="project-lang">
+                        <span class="lang">HTML</span>
+                        <span class="lang">CSS</span>
+                        <span class="lang">JavaScript</span>
+                    </div>
+                    <div class="project-description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo a eius alias omnis delectus aspernatur voluptas tenetur illo doloribus sequi, reprehenderit suscipit provident dolorem velit eveniet, ullam rem debitis officiis.
+                    </div>
+                    <div class="project-buttons">
+                        <a href="#"><span class="buttonProject">more info</span></a>
+                        <a href="#"><span class="buttonProject">check code!</span></a>
+                        </div>
+                    
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="assets/2021-05-30.png" alt="Discover_sao_paulo">
+                </div>
+                <div class="project-content">
+                    <div class="project-title">
+                        <h2>Pig Game</h2>
+                    </div>
+                    <div class="project-lang">
+                        <span class="lang">HTML</span>
+                        <span class="lang">CSS</span>
+                        <span class="lang">JavaScript</span>
+                    </div>
+                    <div class="project-description">
+                        Pig is a simple dice game which in its basic form is playable with just a single die. You win by being the first player to score 100 or more points.
+                    </div>
+                    <div class="project-buttons">
+                        <a href="#"><span class="buttonProject">more info</span></a>
+                        <a href="#"><span class="buttonProject">check code!</span></a>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+        </section>
+    
+        <section id="contact">
+            <header>
+                <h2>Contact</h2>
+            </header>
+    
+            <p> Maybe you want to book an interview, or brainstorm about a project... Send me a message and i'll be happy to answer ASAP</p>
+            
+            <form action="">
+            <input type="text" name="name" id="name" placeholder="Name">
+            <input type="email" name="email" id="email" placeholder="E-mail">
+            <textarea name="message" id="message" placeholder="Message"></textarea>
+            <input class="submitBtn" type="submit" value="Submit">
+            </form>
+            
+        </section>
+        <footer>
+            © 2021 Nicolas Riabosapko. All rights reserved.
+        </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

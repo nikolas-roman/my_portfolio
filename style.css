@@ -1,4 +1,5 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -6,15 +7,16 @@
     text-decoration: none;
     color: black;
     list-style-type: none;
+    scroll-behavior: smooth;
 }
 
 /* responsive navbar */
 
-
-
 #nav-bar {
     display: flex;
     justify-content: flex-end;
+    background-color: rgba(255, 255, 255, 0);
+    margin: auto;
     align-items: center;
     padding: 1rem 0;
 }
@@ -24,7 +26,7 @@
     margin: 0 1.5rem;
     display: none;
     border: none;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .bar {
@@ -61,6 +63,11 @@
 /* ---------------------------- */
 
 @media only screen and (max-width: 768px) {
+
+    
+body {
+    width: 100%;
+}*
     header
 {
     margin-bottom: 5rem;
@@ -68,7 +75,8 @@
     #nav-bar {
         overflow: hidden;
         position: fixed;
-        top: 0; 
+        top: 0;
+        left: 0;
         width: 100%; 
     }
     .nav-links {
@@ -76,13 +84,13 @@
         width: 100%;
         position: fixed;
         top: 0;
+        left:0;
         flex-direction: column;
         justify-content:space-around;
         width: 100%;
-        border-radius: 10px;
         text-align: center;
         background-color: #fff;
-        box-shadow:  0 10px 27px rgba(0, 0, 0, 0.05);
+        box-shadow:  0 10px 27px rgba(0, 0, 0, 0.1);
     }
 
     .nav-links.active {
@@ -113,14 +121,240 @@
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
+
+    .presentation-text > p {
+        font-size: 24px;
+    }
 }
 
 
 /* Main section ---------------------------- */
 
-main {
-    display:flex;
+#hero {
+    height:100vh;
+    display: flex;
     flex-direction: column;
-    padding: 25rem 1rem;
+    justify-content: center;
+    align-items:center;
+    background-color: hsl(211, 49%, 27%);
+}
+
+#hero > h1, p{
+    color:white;
+    font-size: clamp(1rem, -0.8841rem + 8.3507vw, 3.5rem);
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    width: 80%;
+    letter-spacing: .1rem;
+    margin-bottom:2.5rem;
+    transition-property:  .5s ease-in-out;    
+}   
+
+#hero > h1 {
+}
+
+ /* Scroll down animation  */
+
+.scrollDown {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    margin: 0 0 1rem 5rem; 
+    
+}
+
+  .arrows {
+      width: 100px;
+      height: px;
+      position: absolute;
+      left: 50%;
+      margin-left: -30px;
+      bottom: 20px;
+  }
+  
+  .arrows path {
+      stroke: #2994D1;
+      fill: transparent;
+      stroke-width: 2px;	
+      animation: arrow 2s infinite;
+      -webkit-animation: arrow 2s infinite; 
+  }
+  
+  @keyframes arrow
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+  
+  @-webkit-keyframes arrow /*Safari and Chrome*/
+  {
+  0% {opacity:0}
+  40% {opacity:1}
+  80% {opacity:0}
+  100% {opacity:0}
+  }
+  
+  .arrows path.a1 {
+      animation-delay:-1s;
+      -webkit-animation-delay:-1s; /* Safari 和 Chrome */
+  }
+  
+  .arrows path.a2 {
+      animation-delay:-0.5s;
+      -webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+  }
+  
+  .arrows path.a3 {	
+      animation-delay:0s;
+      -webkit-animation-delay:0s; /* Safari 和 Chrome */
+  }
+
+  /* End of scroll down Animation */
+
+main {
+    margin: auto;
+    padding: 2.5rem 1.2rem;
+    height: auto;
+    height: 100vh;
+    border-bottom: 1rem solid black;
+}
+
+main > h1, p {
+    margin: 0px 0px 1.2rem 0px;
+}
+main > p  {
+    font-size: 1rem;
+    width: 80%;
+    line-height: 1.4;
+}
+
+main > button  {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    letter-spacing: .1rem;
+    border: .2rem solid #2a699200;
+    border-radius: 2.5rem;
+    padding: 1rem;
+    font-weight: 500;
+    background-color: var(--main-color);
+    color: rgb(250, 250, 250);
+    cursor: pointer;
+}
+
+
+.main-photo {
+    margin: 5rem auto 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.main-photo > img{
+    padding: .1rem;
+    border-radius: .2rem;
+    border: 1rem solid #2a6892;
+    border-bottom: .5rem solid #2a6892;
+}
+
+#projects, #contact {
+    padding: 1.5rem 1.2rem;
+    height: auto;
+    border-bottom: 1rem solid var(--main-color);
+}
+.container-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+}
+
+.project-card {
+    width: 90%;
+    padding: 1rem .5rem;
+    margin: 1rem auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.project-title, .project-lang, .project-description {
+    margin: 1.5rem 0;
+}
+
+.project-img > img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+.buttonProject {
+    padding: .1rem .4rem;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    margin: 1rem;
+    border: 1px solid black;
+    /* color: rgb(255, 255, 255); */
+}
+
+.lang {
+    width: auto;
+    margin: auto .3rem;
+    padding: .3rem;
+    font-size: 14px;
+    border-bottom: 2px solid #2a699269;
+    font-weight: 600;
+    /* background-color: #2a6892; */
+    color: #2a6892;
+}
+
+.project-buttons {
+    width: 100%;
+    padding: 1rem .5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#contact > form {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 115px;
+}
+
+input[type=text],input[type=email], textarea {
+    padding: .3rem;
+    font-size: 14px;
+    width: 100%;
+    margin: .8em auto;
+    border: none;
+    border-bottom: .04rem solid black;
+    outline: none;
+}
+
+#message {
+    max-width: 100%;
+    min-height: 100px;
+    justify-content: center;
+}
+
+.submitBtn {
+    padding: .3rem;
+    font-size: 16px;
+    width: 6rem;
+    outline: none;
+}
+
+#contact > p {
+    margin-top: 1rem;
+    font-weight: 300;
+    width: 80%;
+    font-size: 16px;
+}
+
+footer {
+    padding: 2rem;
     text-align: center;
 }
