@@ -9,11 +9,9 @@
 </head>
 <body>
     <header id="hero">
-
-
-        <h1>Hello, I'm Nick!</h1>
-        <p> I'm a Developer & Customer Service Specialist</p>
-         <span class="scrollDown" label="Scroll Down"><a href="#about">
+        <h1>Nikolas Roman</h1>
+        <p> Developer & Customer Service Specialist</p>
+         <span class="scrollDown" label="Scroll Down"><a href="#main-content">
             <svg class="arrows">
                 <path class="a1" d="M0 0 L30 32 L60 0"></path>
                 <path class="a2" d="M0 20 L30 52 L60 20"></path>
@@ -21,16 +19,11 @@
             </svg>
         </a>
     </span>
-      
-   
-      
-   
-    
     </header>
-        <main id="about">
+        <main id="main-content">
             <nav id="nav-bar">
                 <ul class="nav-links">
-                        <li class="nav=item"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav=item"><a href="#main-content" class="nav-link">About</a></li>
                         <li class="nav=item"><a href="#projects" class="nav-link">Projects</a></li>
                         <li class="nav=item"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
@@ -41,19 +34,30 @@
                     </button>
             </nav>
             <section id="about">
-                <header>
+                <header class="section-header">
                     <h2>About Me</h2>
                 </header>
-            <div class="main-photo">
-                <img src="assets/1553197838352.jpg" alt="Nicolas">
+            
+            <div class="about-wrapper">
+                <div class="main-photo">
+                    <img src="assets/1553197838352.jpg" alt="Nicolas">
+                </div>
+                <p class="about-me">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, cum odio. Aperiam repudiandae libero nemo exercitationem excepturi. Atque ipsam, culpa temporibus distinctio nobis eaque sint molestiae sed natus fugit nulla.
+                Non recusandae facilis molestias qui saepe totam quidem corrupti earum dolorem voluptas mollitia, numquam ipsum voluptatem distinctio. Possimus nostrum quae commodi expedita repellat ex delectus sequi. Maiores dolorem molestias eum.
+                Eius asperiores neque blanditiis ipsa fuga quis commodi deleniti perspiciatis, autem ea provident velit, repellendus vero corporis sit enim? Architecto incidunt officia reiciendis obcaecati ab, doloremque quaerat odit cupiditate exercitationem?
+                Fugit neque, repellendus possimus quos autem dolorem impedit nihil adipisci fuga facere quo aliquam unde id, ad sunt, repellat quas eos itaque nemo sapiente velit praesentium nobis non iste? Dolore.</p>
+  
+            <div class="skills-wrapper">
+                
+            </div>    
                 
             </div>
             <button> My Curriculum </button>
             </section>
-        </main>
+        
         
         <section id="projects">
-            <header>
+            <header class="section-header">
                 <h2>Projects</h2>
             </header>
             <div class="container-projects">
@@ -105,7 +109,7 @@
             </div>
             <div class="project-card">
                 <div class="project-img">
-                    <img src="assets/2021-05-30.png" alt="Discover_sao_paulo">
+                    <img src="assets/pig-game.png" alt="Pig_game">
                 </div>
                 <div class="project-content">
                     <div class="project-title">
@@ -121,6 +125,7 @@
                     </div>
                     <div class="project-buttons">
                         <a href="#"><span class="buttonProject">more info</span></a>
+                        <a href="https://pig-game-nicolas.netlify.app/"><span class="buttonProject">View Live!</span></a>
                         <a href="#"><span class="buttonProject">check code!</span></a>
                         </div>
                     
@@ -130,20 +135,24 @@
         </section>
     
         <section id="contact">
-            <header>
+            <header class="section-header">
                 <h2>Contact</h2>
             </header>
-    
-            <p> Maybe you want to book an interview, or brainstorm about a project... Send me a message and i'll be happy to answer ASAP</p>
+            <div class="contact-wrapper">  
             
-            <form action="">
-            <input type="text" name="name" id="name" placeholder="Name">
-            <input type="email" name="email" id="email" placeholder="E-mail">
-            <textarea name="message" id="message" placeholder="Message"></textarea>
-            <input class="submitBtn" type="submit" value="Submit">
-            </form>
-            
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero neque accusantium quae eligendi excepturi tempore blanditiis ut atque repudiandae distinctio? Sed repellendus dolores tenetur eos, magni in iusto veritatis est repellat dolore!</p>
+        
+            <div class="form-wrapper">
+                <form>
+                <input type="text" name="name" id="name" placeholder="Name">
+                <input type="email" name="email" id="email" placeholder="E-mail">
+                <textarea name="message" id="message" placeholder="Message"></textarea>
+                <input class="submitBtn" type="submit" value="Submit">
+                </form>
+        </div>
+            </div>
         </section>
+    </main>
         <footer>
             © 2021 Nicolas Riabosapko. All rights reserved.
         </footer>

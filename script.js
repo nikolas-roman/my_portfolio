@@ -21,3 +21,6 @@ function closeMenu() {
     hamburger.classList.remove("active");
     navLinks.classList.remove("active");
 }
+
+// Smart navigation bar
+
