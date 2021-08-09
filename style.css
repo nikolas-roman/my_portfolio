@@ -134,20 +134,18 @@
 
 }
 
-
-/* 
-.curriculum {
-  margin-top: 1rem;
-  font-size: 1.3rem;
+.curriculumBtn {
+  margin-top: 5 rem;
+  font-size: 1.2rem;
   letter-spacing: 0.1rem;
-  border: 0.2rem solid #2a699200;
+  border: 0.2rem solid #2a6992;
   border-radius: 2.5rem;
-  padding: 1rem;
+  padding: .7rem;
   font-weight: 500;
-   background-color: var(--main-color); 
-   color: rgb(250, 250, 250); 
+   background-color: transparent; 
+   color: 2a6992; 
   cursor: pointer;
-} */
+}
 
 .about-wrapper {
   display: flex;
@@ -155,21 +153,17 @@
   align-items:center;
   width:80%;
   margin:auto;
-  
-  /* margin: 1rem auto; */
-
 }
 
 .main-photo {
-  margin: 5rem auto 1rem;
+  margin: 5rem auto;
   display: flex;
   width: fit-content;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.main-photo > img {
-  width:100%; 
+.main-photo > img { 
   height:300px;
 }
 
@@ -182,13 +176,43 @@
   width: 50%
 }
 
+.container-skills{
+  display: block;
+  margin-top: 2rem;
+  text-align: center;
+  width: 100%
+
+}
+
+.skills-wrapper {
+  display: flex;
+  margin:auto;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content:space-around;
+}
+
+.skill-title{
+  text-align: left;
+  display: block;
+  margin: 1rem;
+}
+
+.skill-list li {
+  display:flex;
+  padding: .2rem .8rem;
+}
+
+.lang.skills{
+  border-bottom: none;
+}
+
 #about,
 #projects,
 #contact {
   margin-top: 2rem;
   padding: 1rem;
   height: auto;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 12px;
 
 
 }
@@ -219,7 +243,7 @@
   overflow: hidden;
 }
 
-.project-title h2{
+.project-title h2, .skill-title{
   font-size: 1.5rem;
   font-weight: 700;
   color:#2a6992;
