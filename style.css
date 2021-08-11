@@ -1,160 +1,268 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap");
+
+/*-------------- Color Scheme ---------------------------------------- */
+
+  :root {
+    --background-color: hsl(211, 49%, 10%);
+    --text-color: hsl(204, 45%, 98%);
+    --shade-100: hsl(211, 49%, 20%);
+    --shade-300: hsl(212, 50%, 30%);
+    --shade-5*00: hsl(212, 50%, 70%);
+    --secondary-color: hsla(203, 45%, 30%, 0.251);
+    --grey-color: hsl(212, 25%, 75%);
+    --grey-text: hsl(212, 25%, 85%);
+  }
+ 
+
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: 0;
-  text-decoration: none;
-  color: black;
-  list-style-type: none;
+  box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Oswald', sans-serif;
+  color: var(--grey-text)
 }
 
-.container {
-  margin: 0;
-  padding: 20px;
-  background-color: rgb(144, 155, 158);
+a{
+  text-decoration: none;
 }
 
-/* Main section ---------------------------- */
-
-
-#hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #0d1926;
+body {
+  padding:0;
+  margin:0;
+  background-color: var(--background-color);
 }
 
-#hero > h1,
-#hero > p {
-  color: white;
-  font-size: clamp(1rem, -0.8841rem + 8.3507vw, 3.5rem);
-  font-family: "Oswald", sans-serif;
-  text-align: center;
-  width: 80%;
-  letter-spacing: 0.1rem;
-  margin-bottom: 2.5rem;
-  transition-property: 0.5s ease-in-out;
-}
 
-/* Scroll down animation  */
+/*-------------- Header Section ---------------------------------------- */
 
-.scrollDown {
+@media screen {
+  header {
+    padding:0;
+    margin:0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header::before{
+  content: "";
+  z-index: -1;
   position: absolute;
+  background-color: var(--shade-100);
+  width: 100%;
+  height: 50%;
+  margin: auto;
   bottom: 0;
-  left: 0;
-  margin: 0 0 1rem 5rem;
+  *: 0;
+  }
+
+  header h1 p {
+    font-size: clamp(1rem, -0.1rem + 8.5vw, 3.8rem);
+    margin: 0;
+    font-weight: 800;
+    text-align: left;
+    line-height: 130%;
+    letter-spacing: -0.03em;
 }
 
-.arrows {
-  width: 100px;
-  height: px;
-  position: absolute;
-  left: 50%;
-  margin-left: -30px;
-  bottom: 20px;
-}
-
-.arrows path {
-  stroke: #2994d1;
-  fill: transparent;
-  stroke-width: 2px;
-  animation: arrow 2s infinite;
-  -webkit-animation: arrow 2s infinite;
-}
-
-@keyframes arrow {
-  0% {
-    opacity: 0;
+  /* Scroll down animation  */
+  .scrollDown {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 0 1rem 5rem;
   }
-  40% {
-    opacity: 1;
+  
+  .arrows {
+    width: 100px;
+    height: px;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    bottom: 20px;
   }
-  80% {
-    opacity: 0;
+  
+  .arrows path {
+    stroke: #2994d1;
+    fill: transparent;
+    stroke-width: 2px;
+    animation: arrow 2s infinite;
+    -webkit-animation: arrow 2s infinite;
   }
-  100% {
-    opacity: 0;
+  
+  @keyframes arrow {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
   }
-}
-
-@-webkit-keyframes arrow /*Safari and Chrome*/ {
-  0% {
-    opacity: 0;
+  
+  @-webkit-keyframes arrow /*Safari and Chrome*/ {
+    0% {
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    80% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
   }
-  40% {
-    opacity: 1;
+  
+  .arrows path.a1 {
+    animation-delay: -1s;
+    -webkit-animation-delay: -1s; /* Safari 和 Chrome */
   }
-  80% {
-    opacity: 0;
+  
+  .arrows path.a2 {
+    animation-delay: -0.5s;
+    -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
   }
-  100% {
-    opacity: 0;
+  
+  .arrows path.a3 {
+    animation-delay: 0s;
+    -webkit-animation-delay: 0s; /* Safari 和 Chrome */
   }
-}
-
-.arrows path.a1 {
-  animation-delay: -1s;
-  -webkit-animation-delay: -1s; /* Safari 和 Chrome */
-}
-
-.arrows path.a2 {
-  animation-delay: -0.5s;
-  -webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
-}
-
-.arrows path.a3 {
-  animation-delay: 0s;
-  -webkit-animation-delay: 0s; /* Safari 和 Chrome */
-}
-
+  
 /* End of scroll down Animation */
-
-#main-content {
-  width: 80%;
-  margin: 2.5rem auto;
 }
+/*-------------- Navbar Section --------------------------------------- */
+@media screen {
 
-.section-header {
-  padding: 0;
-  font-size: 28px;
-  margin-bottom: 2rem;
-} 
-.section-header h2 {
-  width: max-content;
-  padding:0 1rem 0 0.2rem;
-  text-transform: uppercase;
-  border-bottom: 3px solid  #2a699269;
-  color:#2a6992;
-  font-family: "Oswald", sans-serif;
+  #nav-bar {
+    position:sticky;
+    background-color: var(--background-color);
+    padding: .5rem 2rem;
+    transition: top 500ms ease-in-out;
+    color:var(--grey-text);
+  }
+  
+  #nav-bar.scroll-up {
+    top: 0;
+  }
+  
+  #nav-bar.scroll-up a {
+    top: 0;
+  }
+
+  #nav-bar.scroll-down {
+    top: -100%;
+  }
+  
+  .hamburger {
+    margin: 0 1.5rem;
+    display: none;
+    border: none;
+    background-color: transparent;
+  }
+  
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color:var(--grey-text);
+  }
+  
+  .nav-links {
+    display: flex;
+    width:100%;
+    gap:10%;
+    justify-content: flex-end;
+    list-style-type: none;
+  }
+  
+  .nav-link {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+  
+  .nav-link:hover{
+    color:var(--shade-500)
+  }
 
 }
+/*-------------- Main Section ----------------------------------------- */
+@media screen{
+  
+  #main-content {
+  background-color: var(--background-color);
+  }
 
-.curriculumBtn {
-  margin-top: 5 rem;
-  font-size: 1.2rem;
-  letter-spacing: 0.1rem;
-  border: 0.2rem solid #2a6992;
-  border-radius: 2.5rem;
-  padding: .7rem;
-  font-weight: 500;
-   background-color: transparent; 
-   color: 2a6992; 
-  cursor: pointer;
-}
-
-.about-wrapper {
-  display: flex;
-  justify-content:space-between;
-  align-items:center;
+.section-container{
   width:80%;
   margin:auto;
 }
+.section-header {
+  height:auto;
+  padding: 2rem 1rem;
+  font-size: 28px;
+} 
+.section-header h2 {
+  padding:2rem 1rem;
+  margin:0 2rem;
+  align-self: flex-start;
 
+}
+
+
+}
+/*-------------- About Section ---------------------------------------- */
+@media screen {
+  
+.about-wrapper {
+  margin:auto;
+}
+
+.about-me {
+  width:100%;
+  max-width: 65ch;
+  font-size: 1.6rem;
+  letter-spacing:.15ch;
+  margin: auto;
+  padding: 6rem 0;
+}
+
+.about-me h2 {
+  color:var(--shade-500)
+}
+.about-me button {
+  margin-top:5rem;
+}
+
+.btn {
+  font-size: 1.3rem;
+  border: .2rem solid var(--shade-300);
+  border-radius: 2rem;
+  padding:1rem;
+  background-color: transparent; 
+  color: var(--grey-text); 
+  cursor: pointer;  
+}
+
+.about-me button:hover{
+  transform: scale(1.07);
+  transition: 0.2s ease-in;
+  background-color: var(--shade-300);
+  border-color: var(--shade-100);
+}
+
+/* 
 .main-photo {
   margin: 5rem auto;
   display: flex;
@@ -165,60 +273,43 @@
 
 .main-photo > img { 
   height:300px;
-}
+} */
 
-.about-me {
-  text-align: left;
-  vertical-align:middle;
-  font-size: 20px;
-  word-wrap: break-word;
-  margin: 1rem 2rem;
-  width: 50%
-}
-
-.container-skills{
-  display: block;
-  margin-top: 2rem;
-  text-align: center;
-  width: 100%
-
-}
+/*-------------- Skills Section ------------------------------------- */
 
 .skills-wrapper {
   display: flex;
-  margin:auto;
   flex-wrap: wrap;
   width: 100%;
   justify-content:space-around;
 }
 
-.skill-title{
-  text-align: left;
-  display: block;
-  margin: 1rem;
+.skills-title {
+  padding-bottom:rem;
+  color: var(--shade-500);
+  border-bottom: 1px solid var(--shade-500);
 }
 
-.skill-list li {
-  display:flex;
-  padding: .2rem .8rem;
-}
-
-.lang.skills{
-  border-bottom: none;
-}
-
-#about,
-#projects,
-#contact {
-  margin-top: 2rem;
-  padding: 1rem;
-  height: auto;
-
-
-}
-.container-projects {
+.skill-list {
+  list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 5rem;
+}
+
+.skills{
+  font-size: 1.5rem;
+}
+
+}
+/*-------------- Projects Section ------------------------------------- */
+@media screen {
+
+
+.container-projects {
+  display: flex;
+  flex-wrap: wrap;
+  
 }
 
 .project-card {
@@ -278,6 +369,11 @@
   justify-content: flex-end;
 }
 
+}
+/*-------------- Contact Section -------------------------------------- */
+@media screen {
+
+
 .contact-wrapper {
   display: flex;
   justify-content:space-around;
@@ -324,76 +420,29 @@ textarea {
   width: 6rem;
   outline: none;
 }
-
-footer {
-  padding: 2rem;
-  text-align: center;
 }
+/*-------------- Footer Section --------------------------------------- */
+@media screen {
 
-
-
-/* responsive navbar */
-
-#nav-bar {
-    position:sticky;
-    display: flex;
-    justify-content: flex-end;
-    background-color: rgba(255, 255, 255, 0);
-    margin: auto;
-    align-items: center;
-    padding: 1rem 0;
-    margin-bottom: 2rem;
+  footer {
+    padding: 2rem;
+    text-align: center;
   }
-  
-  .hamburger {
-    margin: 0 1.5rem;
-    display: none;
-    border: none;
-    background-color: rgba(255, 255, 255, 0);
-  }
-  
-  .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #101010;
-  }
-  
-  .nav-links {
-    display: flex;
-    width: 35%;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .nav-item {
-    margin-left: 5rem;
-  }
-  
-  .nav-link {
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: #475569;
-  }
-  
-  .nav-link:hover {
-    color: #482ff7;
-  }
-  
-  
-/* ---------------------------- */
-
+}
+/*-------------- Media Queries ---------------------------------------- */
 @media only screen and (max-width: 768px) {
     body {
       width: 100%;
     }
     header {
+      padding:0;
+      margin:0;
       margin-bottom: 5rem;
     }
+
+
     #nav-bar {
+      padding:0;
       overflow: hidden;
       position: fixed;
       top: 0;
@@ -407,16 +456,15 @@ footer {
       top: 0;
       left: 0;
       flex-direction: column;
-      justify-content: space-around;
       width: 100%;
       text-align: center;
-      background-color: #fff;
-      box-shadow: 0 10px 27px rgba(0, 0, 0, 0.1);
+      background-color: var(--shade-100);
     }
   
     .nav-links.active {
       display: flex;
       width: 100%;
+      margin:0;
     }
   
     .nav-links > li {
@@ -425,9 +473,16 @@ footer {
     }
   
     .hamburger {
+      position: fixed;
       display: block;
       cursor: pointer;
+      top:2rem;
+      right:1rem;
     }
+    .bar {
+      color:var(--grey-text)
+    }
+    
   
     /* Hamburger Animation */
     .hamburger.active .bar:nth-child(2) {
@@ -436,10 +491,12 @@ footer {
   
     .hamburger.active .bar:nth-child(1) {
       transform: translateY(8px) rotate(45deg);
+      background-color:var(--grey-color);
     }
   
     .hamburger.active .bar:nth-child(3) {
       transform: translateY(-8px) rotate(-45deg);
+      background-color:var(--grey-color);
     }
   
     .presentation-text > p {
@@ -481,9 +538,15 @@ footer {
       min-width: 300px;
       width: 100%;
     }
+    header h1 p {
+      padding: 1rem 1rem 0 1rem;
+
+      margin-top: 1rem;
+    }
 
     .about-me {
       font-size:18px;
+      width: 95%;
     }
 
     .contact-wrapper {
