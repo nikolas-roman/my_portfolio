@@ -8,11 +8,24 @@
     --text-color: hsl(204, 45%, 98%);
     --shade-100: hsl(211, 49%, 20%);
     --shade-300: hsl(212, 50%, 30%);
-    --shade-5*00: hsl(212, 50%, 70%);
+    --shade-500: hsl(212, 50%, 70%);
     --secondary-color: hsla(203, 45%, 30%, 0.251);
     --grey-color: hsl(212, 25%, 75%);
     --grey-text: hsl(212, 25%, 85%);
   }
+
+
+  
+  /* :root {
+    --background-color:#e5e5e5;
+    --text-color: hsl(204, 45%, 98%);
+    --shade-100:hsl(180, 5%, 36%) ;
+    --shade-300:hsl(198, 79%, 38%) ;
+    --shade-500: hsl(160, 41%, 70%);
+    --secondary-color: hsl(45, 60%, 78%);
+    --grey-color: hsl(212, 25%, 75%);
+    --grey-text: hsl(180, 0%, 46%);
+  } */
  
 
 * {
@@ -217,7 +230,11 @@ body {
   padding:2rem 1rem;
   margin:0 2rem;
   align-self: flex-start;
-
+  text-decoration: underline;
+}
+.description-link{
+  text-decoration: underline;
+  color:var(--shade-500)
 }
 
 
@@ -262,43 +279,37 @@ body {
   border-color: var(--shade-100);
 }
 
-/* 
-.main-photo {
-  margin: 5rem auto;
-  display: flex;
-  width: fit-content;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.main-photo > img { 
-  height:300px;
-} */
-
 /*-------------- Skills Section ------------------------------------- */
 
-.skills-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content:space-around;
-}
 
-.skills-title {
+.skills-title{
   padding-bottom:rem;
   color: var(--shade-500);
   border-bottom: 1px solid var(--shade-500);
 }
 
-.skill-list {
-  list-style-type: none;
+.skills-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0 5rem;
+  grid-template-columns: repeat(3,1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding:1rem 80px;
+  font-size:1.2rem;
+}
+.skill-box{
+  padding:1rem;
+  color:var(--shade-500);
+  cursor:pointer;
+}
+.skill-title {
+  padding-bottom:rem;
+  color: var(--shade-100);
 }
 
-.skills{
-  font-size: 1.5rem;
+.skill-title > img {
+  width:72px;
 }
 
 }
@@ -307,8 +318,9 @@ body {
 
 
 .container-projects {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   
 }
 
@@ -316,7 +328,7 @@ body {
   width: 90%;
   padding: 1rem 0.5rem;
   margin: 1rem auto;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
   font-family: 'Nunito', sans-serif;
 }
 
@@ -334,32 +346,29 @@ body {
   overflow: hidden;
 }
 
-.project-title h2, .skill-title{
+.project-title h2{
   font-size: 1.5rem;
   font-weight: 700;
-  color:#2a6992;
+  color:var(--text-color);
   text-transform: uppercase;
+
   
 }
+
 
 .buttonProject {
   padding: 0.1rem 0.4rem;
   letter-spacing: 0.1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin: 1rem;
-  border: 1px solid black;
-  /* color: rgb(255, 255, 255); */
 }
 
 .lang {
-  width: auto;
   margin: auto 0.3rem;
   padding: 0.3rem;
-  font-size: 1rem;
-  border-bottom: 2px solid #2a699269;
-  font-weight: 600;
-  /* background-color: #2a6892; */
-  color: #2a6892;
+  font-size: 1.1rem;
+  border-bottom: 2px solid var(--shade-300);
+  color: var(--shade-500);
 }
 
 .project-buttons {
@@ -376,6 +385,7 @@ body {
 
 .contact-wrapper {
   display: flex;
+  margin:auto;
   justify-content:space-around;
 }
 .contact-wrapper p {
@@ -385,10 +395,38 @@ body {
   width: 40%;
 }
 
-#contact > form {
+.contact-text {
   display: flex;
   flex-direction: column;
-  
+  width:100%;
+  max-width: 65ch;
+}
+
+.social-media {
+  width:50%;
+  display:flex;
+  gap:2rem;
+  margin:5rem 0;
+  color:var(--grey-text);
+}
+
+.social-media a>svg {
+
+  fill:var(--grey-text);
+}
+.social-media a>svg:hover, .social-media a:hover {
+  fill:var(--secondary-color);
+  color:var(--secondary-color);
+}
+
+.social-media a>span{
+  border-radius: 1rem;
+}
+
+#contact > form {
+
+  display: flex;
+  flex-direction: column;
   border-radius: 5px;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 115px;
@@ -397,13 +435,14 @@ body {
 input[type="text"],
 input[type="email"],
 textarea {
+  color:black;
   padding: 0.5rem 0.2rem;
   font-size: 18px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   width: 100%;
   margin: 0.8em auto;
   border: none;
-  border-bottom: 0.04rem solid black;
+  border-bottom: 0.04rem solid rgb(8, 2, 2);
   outline: none;
   resize: none;
 }
@@ -417,10 +456,12 @@ textarea {
 .submitBtn {
   padding: 0.3rem;
   font-size: 16px;
-  width: 6rem;
+  width: 10rem;
   outline: none;
+  color:black;
 }
 }
+
 /*-------------- Footer Section --------------------------------------- */
 @media screen {
 
@@ -562,3 +603,4 @@ textarea {
     }
 
   }
+/*-------------- Animations ---------------------------------------- */
